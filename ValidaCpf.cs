@@ -16,7 +16,7 @@
           return false;
       }
 
-      for (int i = 1; i < 10; i++) //Verificando se são Números Repetidos
+      for (int i = 0; i < 10; i++) //Verificando se são Números Repetidos
       {
         string StringRepetido = string.Concat(Enumerable.Repeat(i.ToString(), 11));
 
@@ -53,6 +53,9 @@
         Soma += int.Parse(CpfTemp[i].ToString()) * SegundoMultiplicador[i];
 
       Resto = (Soma * 10) % 11;
+
+      if (Resto == 10)
+        Resto = 0;
 
       if (Resto.ToString() != Cpf[10].ToString())
         return false;
